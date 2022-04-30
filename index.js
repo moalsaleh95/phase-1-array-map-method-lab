@@ -1,3 +1,4 @@
+// https://www.freecodecamp.org/news/how-to-capitalize-words-in-javascript/
 const tutorials = [
   'what does the this keyword mean?',
   'What is the Constructor OO pattern?',
@@ -11,6 +12,15 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
-}
+
+function titleCased() {
+  return tutorials.map((sentence) => {
+    const item = sentence.split(" ");
+    const capitalizedItems = item.map(
+      (item) => item.charAt(0).toUpperCase() + item.slice(1)
+    );
+    const response = capitalizedItems.join(" ");
+    return response;
+  });
+};
+console.log(titleCased(tutorials))
